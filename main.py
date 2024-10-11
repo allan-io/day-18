@@ -55,12 +55,12 @@ def random_color():
 
 
 for i in range(360):
-    timmy.speed(100)
+    timmy.speed("fastest")
 
-    if i % 10 == 0:
+    if i % 1 == 0:
         timmy.color(random_color())
         timmy.circle(100)
-        timmy.right(10)
+        timmy.right(1)
 
 
 screen.exitonclick()
