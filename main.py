@@ -31,21 +31,36 @@ screen.colormode(255)
 #     if i >= 3:
 #         make_shapes(i)
 
-def random_walk(distance):
-    timmy.speed(10)
-    timmy.pensize(10)
+# def random_walk(distance):
+#     timmy.speed(10)
+#     timmy.pensize(10)
+#
+#     # for _ in range(distance):
+#     while True:
+#         r = random.randint(0, 255)
+#         g = random.randint(0, 255)
+#         b = random.randint(0, 255)
+#         timmy.pencolor((r, g, b))
+#         angle = random.choice([90, 180, 270, 0])
+#         timmy.forward(20)
+#         timmy.right(angle)
+#
+# random_walk(10000000)
 
-    # for _ in range(distance):
-    while True:
-        r = random.randint(0, 255)
-        g = random.randint(0, 255)
-        b = random.randint(0, 255)
-        timmy.pencolor((r, g, b))
-        angle = random.choice([90, 180, 270, 0])
-        timmy.forward(20)
-        timmy.right(angle)
+def random_color():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    return (r, g, b)
 
-random_walk(10000000)
+
+for i in range(360):
+    timmy.speed(100)
+
+    if i % 10 == 0:
+        timmy.color(random_color())
+        timmy.circle(100)
+        timmy.right(10)
 
 
 screen.exitonclick()
